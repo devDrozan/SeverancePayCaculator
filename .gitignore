@@ -1,0 +1,26 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.p8
+*.jks
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.expo/
+.openai/
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Local design-reference documents
+/UI.pdf
+/UX.pdf

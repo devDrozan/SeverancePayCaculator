@@ -8,9 +8,9 @@ This public root repository contains workspace documentation and references thre
 
 | Project | Repository | Purpose | Local address |
 | --- | --- | --- | --- |
-| [api](api/README.md) | [devDrozan/api](https://github.com/devDrozan/api) | Fastify/TypeScript calculation service | `http://127.0.0.1:3001` |
-| [app](app/README.md) | [devDrozan/app](https://github.com/devDrozan/app) | React/Vite web app and installable PWA | `http://127.0.0.1:5173` |
-| [mobile](mobile/README.md) | [devDrozan/mobile](https://github.com/devDrozan/mobile) | Expo/React Native Android and iPhone client | Expo development server |
+| [api](https://github.com/devDrozan/api/blob/main/README.md) | [devDrozan/api](https://github.com/devDrozan/api) | Fastify/TypeScript calculation service | `http://127.0.0.1:3001` |
+| [app](https://github.com/devDrozan/app/blob/main/README.md) | [devDrozan/app](https://github.com/devDrozan/app) | React/Vite web app and installable PWA | `http://127.0.0.1:5173` |
+| [mobile](https://github.com/devDrozan/mobile/blob/main/README.md) | [devDrozan/mobile](https://github.com/devDrozan/mobile) | Expo/React Native Android and iPhone client | Expo development server |
 
 ## Clone the workspace
 
@@ -43,7 +43,7 @@ npm run dev
 
 Open `http://127.0.0.1:5173`. The web development server proxies calculation requests to the API. **Try an example** loads the official MOEL worked example into the form; the API computes the result after review.
 
-For mobile setup, follow [mobile/README.md](mobile/README.md). A physical phone needs an API address reachable over your local network; its own `localhost` is not your computer.
+For mobile setup, follow [mobile/README.md](https://github.com/devDrozan/mobile/blob/main/README.md). A physical phone needs an API address reachable over your local network; its own `localhost` is not your computer.
 
 ## Scope and privacy
 

@@ -60,7 +60,7 @@ Both clients use [openapi-typescript](https://openapi-ts.dev/) to generate types
 
 - Keep the initial system stateless, without login, cloud history, or a database. Authentication and persistence are future extensions, not dependencies of the calculator.
 - Do not request passport numbers, alien registration numbers, or bank details.
-- Keep financial inputs and results in client session memory. Initially persist only language preferences; do not cache financial requests or responses.
+- Keep financial inputs and results in client session memory. Persist only language and appearance preferences; do not cache financial requests or responses.
 - Exclude salaries and calculation payloads from logs and analytics.
 - Use HTTPS outside local development and keep API base URLs environment-configurable. Client-exposed environment variables must contain no secrets.
 - Deliver `api` as a Docker-compatible HTTP service and `app` as static build assets. Mobile uses Expo's build and release workflow.

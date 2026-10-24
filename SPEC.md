@@ -14,7 +14,7 @@ Build a severance calculator for E-9 workers in South Korea, with a foundation f
 - Optional manually reported DC account balances, without investment-return projections.
 - An E-9 departure guarantee insurance explanation with official EPS links.
 - Calculation without an account; no login or saved cloud history in the first release.
-- Mobile System, Light, and Dark appearance choices, plus an About screen with creator credit and the app's purpose.
+- Mobile Light and Dark appearance controls with a system-following default, plus an About screen with creator credit and the app's purpose.
 
 Results are estimates **before tax, in KRW**. Insurance reconciliation, tax calculations, employer-specific enhanced benefits, and complex employment histories are outside the first release.
 
@@ -120,8 +120,8 @@ Both clients must support clear loading, validation, unavailable-service, and re
 - The PWA supports installation and cached explanatory content.
 - Calculations require connectivity.
 - Keep financial inputs and results in session memory; persist only language and appearance preferences.
-- The mobile app defaults to the system appearance, follows device theme changes in System mode, and remembers an explicit Light or Dark choice. Changing appearance preserves the current calculation draft and step. Both themes cover navigation, forms, validation, results, guidance, and About in English and Burmese.
-- Mobile language, appearance, and About controls start collapsed under one settings gear. Tapping the gear expands or collapses the controls with a localized accessible label and expanded state. Keep the three primary calculator, guidance, and insurance tabs visible; navigation closes settings, including returning from About. Switching language or appearance preserves the current calculation and keeps settings usable in the selected language and theme.
+- The mobile app defaults to the system appearance, follows device theme changes until the user chooses Light or Dark, and remembers an explicit choice. Existing saved System preferences continue to follow the device; the menu highlights the resolved Light or Dark appearance. Changing appearance preserves the current calculation draft and step. Both themes cover navigation, forms, validation, results, guidance, and About in English and Burmese.
+- Mobile preferences start collapsed under one hamburger menu. Tapping it expands or collapses three icon-labelled rows: Language with an English/မြန်မာ two-option control, Appearance with a Light/Dark two-option control, and About us as a navigation action. Icons accompany readable labels; selections have accessible checked states and the menu button has a localized label and expanded state. Keep the three primary calculator, guidance, and insurance tabs visible; navigation closes the menu, including returning from About. Switching language or appearance preserves the current calculation and keeps the menu open and usable in the selected language and theme.
 - Mobile About credits "Created by devrozan" and explains the purpose: helping Myanmar workers in South Korea understand their severance pay and retirement benefits. Show a copyright notice with the current year and `devrozan` as the owner, without invented biography or profile links.
 - Do not cache calculation requests or responses.
 - Verify Burmese glyph rendering, line wrapping, and readable font sizes.

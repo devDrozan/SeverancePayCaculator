@@ -125,6 +125,7 @@ Both clients must support clear loading, validation, unavailable-service, and re
 - Mobile About credits "Created by devrozan" and explains the purpose: helping Myanmar workers in South Korea understand their severance pay and retirement benefits. Show a copyright notice with the current year and `devrozan` as the owner, without invented biography or profile links.
 - Do not cache calculation requests or responses.
 - Verify Burmese glyph rendering, line wrapping, and readable font sizes.
+- Mobile About prose must leave room for stacked Burmese marks using the font's natural iOS line metrics, wrap without truncation at narrow widths and larger text sizes, and separate explanatory paragraphs visibly.
 - Use accessible labels, keyboard navigation, and touch-friendly controls.
 
 ### Privacy

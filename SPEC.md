@@ -56,7 +56,7 @@ Collect wage totals for each year or partial year within the employment period. 
 - Calculate the minimum contribution estimate from eligible wages divided by 12.
 - Show yearly calculations and their total.
 - Optionally accept an account balance and its statement date.
-- Display the reported balance separately from required contributions.
+- Display the reported balance separately from required contributions, preserving its accepted decimal amount on Review and Result.
 - Do not infer missing employer contributions by comparing the investment balance with the contribution estimate.
 
 DC account value depends on contributions and investment performance. [MOEL pension guidance](https://moel.go.kr/retirementpay.do)
@@ -107,10 +107,12 @@ Responses include:
 
 Both clients must support clear loading, validation, unavailable-service, and review-required states. Failed requests retain entered information and offer an explicit retry.
 
-- Back, Edit, and continuing with unchanged employment preserve all entered wage details in session memory. Employment edits retain rows only when the API-generated period boundaries still match; identify changed periods needing new amounts. Explicit sample and new-calculation actions may replace the draft.
+- Back, Edit, consulting guidance and returning, and continuing with unchanged employment preserve the selected scheme, entered details, and calculation step in session memory. Employment edits retain wage rows only when the API-generated period boundaries still match; identify changed periods needing new amounts. Explicit sample and new-calculation actions may replace the draft.
+- Weekly hours preserve decimal text during editing and submit the intended numeric value; typing `14.5` must never become `145`.
 - Invalid amounts and required statement dates show localized errors beside the affected fields. Reveal and focus the first invalid field, including issues returned by the API.
 - Successful forward, Back, and Edit transitions reveal the new step and move keyboard/accessibility focus to its heading or result summary. Language changes alone preserve reading position; respect reduced-motion preferences.
 - Review displays every accepted decimal input exactly, including fractional digits, without conversion through binary floating point. Final benefit estimates keep the API's whole-won rounding rule.
+- Loading actions retain their localized accessible names and communicate progress. Result amounts remain readable as complete values in narrow layouts, without truncation or an isolated final digit.
 
 ### PWA and mobile behavior
 

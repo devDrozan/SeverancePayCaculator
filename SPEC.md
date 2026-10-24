@@ -121,6 +121,7 @@ Both clients must support clear loading, validation, unavailable-service, and re
 - Calculations require connectivity.
 - Keep financial inputs and results in session memory; persist only language and appearance preferences.
 - The mobile app defaults to the system appearance, follows device theme changes in System mode, and remembers an explicit Light or Dark choice. Changing appearance preserves the current calculation draft and step. Both themes cover navigation, forms, validation, results, guidance, and About in English and Burmese.
+- Mobile language, appearance, and About controls start collapsed under one settings gear. Tapping the gear expands or collapses the controls with a localized accessible label and expanded state. Keep the three primary calculator, guidance, and insurance tabs visible; navigation closes settings, including returning from About. Switching language or appearance preserves the current calculation and keeps settings usable in the selected language and theme.
 - Mobile About credits "Created by devrozan" and explains the purpose: helping Myanmar workers in South Korea understand their severance pay and retirement benefits. Show a copyright notice with the current year and `devrozan` as the owner, without invented biography or profile links.
 - Do not cache calculation requests or responses.
 - Verify Burmese glyph rendering, line wrapping, and readable font sizes.

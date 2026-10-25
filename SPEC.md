@@ -108,7 +108,7 @@ Responses include:
 
 Both clients must support clear loading, validation, unavailable-service, and review-required states. Failed requests retain entered information and offer an explicit retry.
 
-- Back, Edit, consulting guidance and returning, and continuing with unchanged employment preserve the selected scheme, entered details, and calculation step in session memory. Employment edits retain wage rows only when the API-generated period boundaries still match; identify changed periods needing new amounts. Explicit sample and new-calculation actions may replace the draft.
+- Back, Edit, consulting guidance and returning, and continuing with unchanged employment preserve the selected scheme, entered details, and calculation step in session memory. Employment edits retain wage rows only when the API-generated period boundaries still match; identify changed periods needing new amounts. Explicit sample and new-calculation actions may replace the draft. The mobile calculator begins with the employment form; do not show a sample-data button or populate demo wages.
 - Weekly hours preserve decimal text during editing and submit the intended numeric value; typing `14.5` must never become `145`.
 - Invalid amounts and required statement dates show localized errors beside the affected fields. Reveal and focus the first invalid field, including issues returned by the API.
 - Successful forward, Back, and Edit transitions reveal the new step and move keyboard/accessibility focus to its heading or result summary. Language changes alone preserve reading position; respect reduced-motion preferences.
@@ -125,6 +125,7 @@ Both clients must support clear loading, validation, unavailable-service, and re
 - Mobile About credits "Created by devrozan" and explains the purpose: helping Myanmar workers in South Korea understand their severance pay and retirement benefits. Show a copyright notice with the current year and `devrozan` as the owner, without invented biography or profile links.
 - Do not cache calculation requests or responses.
 - Verify Burmese glyph rendering, line wrapping, and readable font sizes.
+- Mobile hero headings preserve the translated wording and spaces without inserting forced line breaks. Use readable responsive typography, remaining on one line where it fits and wrapping naturally for longer wording or larger text instead of truncating or automatically shrinking it.
 - Mobile About prose must leave room for stacked Burmese marks using the font's natural iOS line metrics, wrap without truncation at narrow widths and larger text sizes, and separate explanatory paragraphs visibly.
 - Use accessible labels, keyboard navigation, and touch-friendly controls.
 

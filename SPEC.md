@@ -15,6 +15,7 @@ Build a severance calculator for E-9 workers in South Korea, with a foundation f
 - An E-9 departure guarantee insurance explanation with official EPS links.
 - Calculation without an account; no login or saved cloud history in the first release.
 - Mobile Light and Dark appearance controls with a system-following default, plus an About screen with creator credit and the app's purpose.
+- A mobile launch screen with the app name and existing logo, shown for three seconds before the calculator appears.
 
 Results are estimates **before tax, in KRW**. Insurance reconciliation, tax calculations, employer-specific enhanced benefits, and complex employment histories are outside the first release.
 
@@ -117,6 +118,7 @@ Both clients must support clear loading, validation, unavailable-service, and re
 
 ### PWA and mobile behavior
 
+- On each cold mobile launch, show the configured app name (currently `E9 Mate Myanmar`) and existing won logo centered on a full-screen launch view. Keep it visible for at least three seconds from its first layout; reveal the main interface once that duration and local font/language/theme initialization have completed. Font or preference failures must fall back without trapping the user. Do not wait for the calculation API. Ordinary navigation, appearance/language changes, and returning from the background must not replay it. Respect light/dark appearance, safe areas, large text, and reduced motion; use a static layout without a countdown, ads, or extra actions. Configure the native launch screen with matching branding/background and hand off to the timed app view without showing the calculator in between. Native splash presentation must also be checked in a standalone build because Expo Go's launch UI differs.
 - The PWA supports installation and cached explanatory content.
 - Calculations require connectivity.
 - Keep financial inputs and results in session memory; persist only language and appearance preferences.
@@ -154,4 +156,5 @@ These features are outside the first release.
 - Confirm complex cases return review-required outcomes without misleading totals.
 - Verify complete English/Burmese flows, including errors and result explanations.
 - Test mobile layouts, accessibility, connectivity failures, retry behavior, and PWA cache exclusions.
+- Verify the mobile launch logo/name, three-second minimum, readiness/fallback behavior, and that navigation or foregrounding does not replay the launch screen; check light/dark appearance and large text at narrow widths.
 - Review implemented calculation rules against official sources before public release.

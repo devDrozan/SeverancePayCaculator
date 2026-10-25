@@ -43,13 +43,23 @@ npm run dev
 
 Open `http://127.0.0.1:5173`. The web development server proxies calculation requests to the API. **Try an example** loads the official MOEL worked example into the form; the API computes the result after review.
 
-For mobile setup, follow [mobile/README.md](https://github.com/devDrozan/mobile/blob/main/README.md). A physical phone needs an API address reachable over your local network; its own `localhost` is not your computer.
+## Run the mobile app
+
+For installation and API configuration, follow [mobile/README.md](https://github.com/devDrozan/mobile/blob/main/README.md). Run Expo commands inside `mobile`, which contains the Expo `package.json` and `app.json`. From this workspace's root, after setup:
+
+```sh
+cd mobile
+npx expo-doctor
+npm start
+```
+
+The workspace root contains documentation and submodule pointers, so running `npx expo-doctor` there cannot load the mobile app's configuration. A physical phone needs an API address reachable over your local network; its own `localhost` is not your computer.
 
 ## Scope and privacy
 
 The calculator estimates gross KRW amounts before tax for one continuous employment period with one unchanged plan. It flags special histories for review. DB estimates cover the statutory baseline. DC contributions and reported investment balances remain separate.
 
-There is no login or database. Salary inputs and results stay in client memory and are not logged or cached by the API. Only the language preference is saved on the device.
+There is no login or database. Salary inputs and results stay in client memory and are not logged or cached by the API. Only language and mobile appearance preferences are saved on the device.
 
 Local implementation does not provision public hosting, publish remote repositories, or submit mobile apps to stores. Before public release, have a Korean labor specialist review the calculation assumptions, historical boundaries, and English/Burmese wording.
 

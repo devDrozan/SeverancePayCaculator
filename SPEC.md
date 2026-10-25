@@ -126,7 +126,7 @@ Both clients must support clear loading, validation, unavailable-service, and re
 - Do not cache calculation requests or responses.
 - Verify Burmese glyph rendering, line wrapping, and readable font sizes.
 - Mobile hero headings preserve the translated wording and spaces without inserting forced line breaks. Use readable responsive typography, remaining on one line where it fits and wrapping naturally for longer wording or larger text instead of truncating or automatically shrinking it.
-- Mobile About prose must leave room for stacked Burmese marks using the font's natural iOS line metrics, wrap without truncation at narrow widths and larger text sizes, and separate explanatory paragraphs visibly.
+- Mobile About, guidance, and insurance prose must leave room for stacked Burmese marks using the font's natural iOS line metrics, wrap without truncation at narrow widths and larger text sizes, and separate explanatory paragraphs visibly. Informational cards use balanced top and bottom padding so text does not crowd the card edges.
 - Use accessible labels, keyboard navigation, and touch-friendly controls.
 
 ### Privacy

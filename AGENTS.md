@@ -58,9 +58,9 @@ Both clients use [openapi-typescript](https://openapi-ts.dev/) to generate types
 
 ## Privacy and deployment boundaries
 
-- Keep the initial system stateless, without login, cloud history, or a database. Authentication and persistence are future extensions, not dependencies of the calculator.
+- Keep the initial system stateless, without login, cloud history, or a server database. Authentication and cloud persistence are future extensions, not dependencies of the calculator; approved salary-module local storage is described below.
 - Do not request passport numbers, alien registration numbers, or bank details.
-- Keep financial inputs and results in client session memory. Persist only language and appearance preferences; do not cache financial requests or responses.
+- Keep severance financial inputs and all calculation results in client session memory. Persist language and appearance preferences; the Salary Estimate from Work Time module may additionally persist its own work records and monthly pay settings locally as specified in SPEC.md (IndexedDB on web, SQLite on mobile). Do not cache financial requests or responses.
 - Exclude salaries and calculation payloads from logs and analytics.
 - Use HTTPS outside local development and keep API base URLs environment-configurable. Client-exposed environment variables must contain no secrets.
 - Deliver `api` as a Docker-compatible HTTP service and `app` as static build assets. Mobile uses Expo's build and release workflow.

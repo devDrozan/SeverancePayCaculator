@@ -1,6 +1,6 @@
-# ထွယ်ဂျီဂွမ်Caculator
+# E9 Mate Myanmar
 
-An English/Burmese severance calculator for E-9 workers in Korea. Normal statutory severance, DB baseline estimates, and DC required-contribution estimates use one stateless API.
+An English/Burmese worker toolkit for Myanmar E-9 workers in Korea. The local mobile app opens a modular Home dashboard with one information and sample-ad carousel, service search, Severance Calculator, and E-9 Insurance. Salary Estimate from Work Time opens its calendar and salary flow directly; other planned services open Coming soon pages. The web/PWA provides severance and the Salary Estimate from Work Time tool. The mobile salary feature is enabled in local source; native release verification remains pending. Normal statutory severance, DB baseline estimates, and DC required-contribution estimates use one stateless API.
 
 ## Projects
 
@@ -45,7 +45,7 @@ Open `http://127.0.0.1:5173`. The web development server proxies calculation req
 
 ## Run the mobile app
 
-For installation and API configuration, follow [mobile/README.md](https://github.com/devDrozan/mobile/blob/main/README.md). Run Expo commands inside `mobile`, which contains the Expo `package.json` and `app.json`. From this workspace's root, after setup:
+For installation and API configuration, follow [mobile/README.md](mobile/README.md). Run Expo commands inside `mobile`, which contains the Expo `package.json` and `app.json`. From this workspace's root, after setup:
 
 ```sh
 cd mobile
@@ -59,7 +59,7 @@ The workspace root contains documentation and submodule pointers, so running `np
 
 The calculator estimates gross KRW amounts before tax for one continuous employment period with one unchanged plan. It flags special histories for review. DB estimates cover the statutory baseline. DC contributions and reported investment balances remain separate.
 
-There is no login or database. Salary inputs and results stay in client memory and are not logged or cached by the API. Only language and mobile appearance preferences are saved on the device.
+There is no login or server database. Severance inputs and all calculation results stay in session memory. Salary Estimate from Work Time may save its daily work records and monthly pay settings only on the device (IndexedDB on web, SQLite on mobile), with disclosure and deletion controls. Only the selected month is submitted when estimating; the API does not store, log, or cache financial payloads. Language and appearance preferences are also saved locally.
 
 Local implementation does not provision public hosting, publish remote repositories, or submit mobile apps to stores. Before public release, have a Korean labor specialist review the calculation assumptions, historical boundaries, and English/Burmese wording.
 

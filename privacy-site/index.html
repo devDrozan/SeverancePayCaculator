@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How E9 Mate Myanmar handles calculator inputs, local expense records, advertising data, and privacy choices.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Privacy Policy · E9 Mate Myanmar</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to privacy policy</a>
+  <header class="site-header">
+    <a class="brand" href="#main" aria-label="E9 Mate Myanmar privacy policy"><span class="brand-mark" aria-hidden="true">E9</span><span class="brand-name">E9 Mate Myanmar<span>Privacy &amp; your information</span></span></a>
+    <span class="header-note">Android app</span>
+  </header>
+  <main id="main">
+    <div class="hero">
+      <p class="eyebrow">Your information, explained</p>
+      <h1>Privacy Policy</h1>
+      <p class="lead">Understand what stays on your device, what is sent for calculations, and how advertising works in E9 Mate Myanmar.</p>
+      <ul class="meta"><li>Effective date: <time datetime="2026-11-09">9 November 2026</time></li><li>Package: <code>com.e9mate.myanmar</code></li></ul>
+    </div>
+    <aside class="review-notice" aria-label="Interim notice status" data-publication-status="interim">
+      <strong>Interim privacy notice</strong>
+      <p>The production calculation API has not been deployed. Support-email retention is not yet defined, and advertising consent and release verification are incomplete. This notice describes the current implementation and will be updated as those details are finalized.</p>
+    </aside>
+    <div class="overview" aria-label="At a glance">
+      <div class="summary-card"><span class="badge">On your device</span><h2>Your expense records</h2><p>Saved expenses, work records, pay settings, and preferences are kept locally by the app.</p></div>
+      <div class="summary-card"><span class="badge">Online tools</span><h2>Calculation requests</h2><p>Employment details can be sent when you continue; financial inputs are sent when you request an estimate.</p></div>
+      <div class="summary-card"><span class="badge">Third-party service</span><h2>Google AdMob</h2><p>Advertising involves separate processing of device and technical data by Google.</p></div>
+    </div>
+    <div class="policy-layout">
+      <nav class="contents" aria-label="On this page"><p class="eyebrow">On this page</p><ol>
+        <li><a href="#scope">About this policy</a></li><li><a href="#information">Information we handle</a></li><li><a href="#processing">Processing &amp; sharing</a></li><li><a href="#advertising">Google AdMob</a></li><li><a href="#choices">Consent &amp; your choices</a></li><li><a href="#retention">Retention &amp; deletion</a></li><li><a href="#security">Security &amp; device access</a></li><li><a href="#children">Children’s privacy</a></li><li><a href="#website">This website &amp; links</a></li><li><a href="#changes">Policy changes</a></li><li><a href="#contact">Contact</a></li>
+      </ol></nav>
+      <article class="policy" aria-label="Full privacy policy">
+        <section id="scope"><h2>01. About this policy</h2>
+          <p>This policy explains how the developer of <strong>E9 Mate Myanmar</strong> (“we”, “us”, or “our”) handles information in the Android application with package name <code>com.e9mate.myanmar</code>. The app provides severance calculations, an expense tracker, work-time salary estimates, and E-9 worker information and utilities. It also includes a currency-conversion preview whose live rates are currently unavailable until an approved source is configured.</p>
+          <p>The app does not require an account. It does not ask you to connect a bank account or provide a passport number, alien registration number, or payment-card details. Please avoid putting identifying or sensitive information in expense descriptions or support emails unless needed for your request.</p>
+        </section>
+        <section id="information"><h2>02. Information we handle</h2>
+          <div class="table-scroll" role="region" aria-label="Information and storage table" tabindex="0"><table>
+            <caption>Where your information goes</caption><thead><tr><th scope="col">Information</th><th scope="col">How it is used</th><th scope="col">Storage or transmission</th></tr></thead><tbody>
+              <tr><th scope="row">Severance calculator inputs</th><td>Employment dates, working hours, pension/calculation choice, a yes/no flag indicating whether special employment adjustments apply, wages, allowances, bonuses, leave pay, and any pension balance/date you enter are used to prepare your estimate. The adjustment flag does not request detailed leave or settlement records.</td><td>Held in the app session; employment details, including the adjustment flag, are sent when you continue to request calculation context. The relevant financial inputs and employment details are sent when calculating an estimate.</td></tr>
+              <tr><th scope="row">Work records &amp; monthly pay settings</th><td>Monthly base salary, hourly rates, dated normal/overtime/night hours, and the saved storage-notice acknowledgment support the work calendar.</td><td>Saved in a local SQLite database. Requesting a salary estimate sends only the selected month’s settings and work entries to the API.</td></tr>
+              <tr><th scope="row">Expense records</th><td>Record ID, date, category, description, amount, and a saved storage-notice acknowledgment support your expense calendar and totals.</td><td>Saved in a local SQLite database. The expense feature does not upload these records to our API.</td></tr>
+              <tr><th scope="row">Currency preview input</th><td>The entered amount and KRW/MMK direction are used for the conversion you request when a valid rate is available.</td><td>Held in session memory and sent to our API on Convert; the app does not send that amount to the rate institution.</td></tr>
+              <tr><th scope="row">Language &amp; appearance</th><td>Remember your interface choices.</td><td>Saved in local app preferences.</td></tr>
+              <tr><th scope="row">Advertising &amp; technical data</th><td>Ad delivery, measurement, diagnostics, security, and fraud prevention.</td><td>Processed externally through Google Mobile Ads; see the advertising section.</td></tr>
+              <tr><th scope="row">Privacy or support messages</th><td>Respond to questions you choose to email us.</td><td>Your email address and message pass through your and our email providers. Do not include financial records unless necessary.</td></tr>
+            </tbody></table></div>
+          <p>Estimates and unsaved drafts remain in session memory rather than being saved as a calculation history. Local expense and work records can be recorded and edited offline; API calculations and ads require a network connection.</p>
+        </section>
+        <section id="processing"><h2>03. Processing &amp; sharing</h2>
+          <p><strong>Calculation service.</strong> The app sends the information described above to the configured calculation API for the requested functionality. The API application processes financial inputs for the request and has no database or application-level history of those inputs or results. API request logging is disabled, and the reviewed code does not write calculator inputs or results to logs. Server startup messages and startup errors may be logged. Responses use a no-store instruction. This does not establish that every hosting or network layer has no logs.</p>
+          <p><strong>Network and hosting information.</strong> As of the effective date, the developer has not deployed a public production calculation API; the reviewed configuration points to a development server. Connecting to a configured API exposes technical information such as your IP address to the endpoint and its infrastructure. The service uses in-memory request rate limiting. Before public online calculations are released, the production provider, processing locations, and any hosting connection/security logs and retention must be verified and reflected in this policy. No production hosting provider or retention period has been selected.</p>
+          <p><strong>Advertising.</strong> Google processes advertising data separately as described below. Our app code does not pass your salary, severance inputs, work entries, or expense descriptions to AdMob as advertising parameters. No separate app analytics or crash-reporting service is integrated in the reviewed application code; the advertising SDK has its own measurement and diagnostic processing.</p>
+          <p><strong>Other recipients.</strong> Messages sent to our Gmail contact address are also processed by Google under its <a href="https://policies.google.com/privacy" rel="noreferrer">Privacy Policy</a>, as well as by your chosen email provider. If you open an official reference or an advertisement, the destination service handles your visit under its own policy. Information may also be disclosed where legally required. Google and other service providers may process information outside your country according to their own terms and applicable arrangements; this notice does not promise a particular data-residency location.</p>
+        </section>
+        <section id="advertising"><h2>04. Google AdMob advertising</h2>
+          <p>The app integrates <strong>Google AdMob through the Google Mobile Ads SDK</strong>. Opening the Home screen can initiate a banner-ad request. The reviewed implementation uses Google test banner IDs and requests non-personalized ads. Test ads are not evidence that no network data is processed, and non-personalized ads do not mean no data collection.</p>
+          <p>The developer has confirmed use of the default Google AdMob account setup, without separately added ad networks. No additional advertising-network SDK or mediation adapter was identified in the reviewed app code. Google’s advertising services may still involve advertising partners under Google’s policies and account configuration; this does not mean Google is the only possible advertising recipient. The final release configuration must be checked if the setup changes.</p>
+          <p>Google’s <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" rel="noreferrer">Mobile Ads SDK data disclosure</a> describes collection and sharing of IP addresses, which can indicate approximate location; product interactions such as launches, taps, and ad views; performance and diagnostic information; and device or account identifiers, including the Android advertising ID and app set ID when available. Google uses these data for advertising, measurement, and fraud prevention. Availability of identifiers depends on the device, settings, SDK, and ad-serving mode.</p>
+          <p>Advertising technology can access or store information on the device, including identifiers or similar technologies. Requesting non-personalized ads does not itself obtain consent for such access.</p>
+          <ul><li><a href="https://policies.google.com/privacy" rel="noreferrer">Google Privacy Policy</a></li><li><a href="https://policies.google.com/technologies/ads" rel="noreferrer">Google advertising information</a></li><li><a href="https://policies.google.com/technologies/partner-sites" rel="noreferrer">How Google uses information from partner apps</a></li><li><a href="https://myadcenter.google.com/" rel="noreferrer">Google advertising privacy controls</a></li></ul>
+        </section>
+        <section id="choices"><h2>05. Consent &amp; your choices</h2>
+          <p>The work-time module asks you to explicitly accept its local-storage and selected-month API-submission notice before saving or calculating. Saving an expense automatically records acknowledgment of its local-storage notice. Neither action is consent to advertising, tracking, or unrelated processing. You choose whether to request online calculations; expense recording does not require submitting expenses to the API.</p>
+          <p><strong>Advertising controls in the reviewed build:</strong> an in-app advertising-consent form and advertising privacy-options entry are not currently implemented. Where consent is required, that flow must be implemented and verified before advertising release. Reading or accepting this policy is not a substitute for that consent.</p>
+          <p>You can manage or delete the Android advertising ID through your device’s advertising privacy settings, where available. Menu names vary by Android version. These settings do not necessarily prevent all technical processing or remove information already held by Google. Google’s controls and policy explain its available choices.</p>
+          <p>You may contact us about privacy questions or requests, including access, correction, or deletion where applicable. The response available depends on what information we hold and applicable requirements. We cannot access or remotely delete records that exist only in your app’s local storage.</p>
+        </section>
+        <section id="retention"><h2>06. Retention &amp; deletion</h2>
+          <ul><li><strong>Saved work records and pay settings:</strong> remain locally until you use the work module’s delete-month or delete-all action, or the operating system removes the app’s data.</li><li><strong>Saved expenses:</strong> remain locally until you delete an expense, delete the selected month, delete all expenses, or remove the app’s data. Work and expense deletion controls operate separately.</li><li><strong>Preferences:</strong> remain locally until overwritten or the app’s data is cleared.</li><li><strong>Unsaved drafts and calculation results:</strong> are held for the app session and may remain while the app process is in memory; they are not a persistent server history.</li><li><strong>Calculation requests:</strong> are not saved by the API application. There is no deployed production API yet. Any production infrastructure log retention must be reviewed when hosting is selected, before public online calculations are released.</li><li><strong>Google advertising data:</strong> is retained according to Google’s policies and applicable controls. Clearing local app data does not automatically delete Google-held data.</li><li><strong>Email correspondence:</strong> is handled in the developer’s email account to answer your request. A fixed retention/deletion period has not yet been adopted for these messages. You can contact the privacy address below with a deletion request; this notice will be updated when a retention schedule is established.</li></ul>
+          <p>You can use Android’s app settings to clear app storage, or uninstall the app, to remove its local records and preferences from that installation. Deletion through the app is not a guarantee of forensic erasure from every storage layer.</p>
+          <p>We do not provide app-operated cloud backup or synchronization. Android backup is disabled in the current app configuration; operating-system or manufacturer migration behavior can vary and is not guaranteed by this policy. Any copies made outside the app may need to be removed separately. There is no app account to delete.</p>
+        </section>
+        <section id="security"><h2>07. Security &amp; device access</h2>
+          <p>The production API client is configured to require HTTPS. Google documents TLS for the Mobile Ads SDK’s data transmission. The final production endpoint and release build still need verification; development builds may use a local HTTP server. No system can guarantee absolute security.</p>
+          <p>Saved records use app-local storage. We do not claim that the app implements additional database encryption, end-to-end encryption, or guaranteed secure erasure. Protect your device with its available access controls and keep the operating system up to date.</p>
+          <p>The implemented calculator and expense flows do not request access to your camera, microphone, contacts, precise device location, photos, or personal files. Network access supports API requests and ads; advertising SDKs can use advertising-related identifiers as described above. Permissions added by native dependencies must still be checked in the final release build.</p>
+        </section>
+        <section id="children"><h2>08. Children’s privacy</h2>
+          <p>E9 Mate Myanmar is designed for E-9 workers and related personal planning, rather than for children. We do not intentionally seek children’s personal information. If you believe a child has provided information to us, contact the privacy email below. Audience settings and applicable advertising protections must be verified before distribution.</p>
+        </section>
+        <section id="website"><h2>09. This website &amp; external links</h2>
+          <p>This policy website contains no advertising SDK, analytics, forms, embedded third-party content, tracking scripts, or cookies set by our site code. Its stylesheet is served with the page; there is no login or font-service request.</p>
+          <p>When hosted on GitHub Pages, GitHub processes visitor connection information, including IP addresses, to serve and protect the website. That hosting processing is governed by the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>. We do not claim the hosting provider records no information. Following an external link, or emailing us, sends information to the service you choose.</p>
+        </section>
+        <section id="changes"><h2>10. Changes to this policy</h2>
+          <p>We will update this page when the app’s data practices change and revise the effective date. Material changes may require additional notice or consent as applicable. This interim version states the current implementation and identifies details that are still being finalized. Publishing this notice does not mean the app’s consent or release verification is complete.</p>
+        </section>
+        <section id="contact" class="contact-card"><p class="eyebrow">Questions about your privacy?</p><h2>11. Contact the developer</h2>
+          <p>For privacy questions or requests about E9 Mate Myanmar, contact:</p>
+          <p><strong>E9 Mate Myanmar developer</strong><br><a class="contact-email" href="mailto:rozannainghangu@gmail.com">rozannainghangu@gmail.com</a></p>
+          <p class="muted">Please identify the app and describe your request. Avoid sending identity documents, bank details, or full financial records.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><span>E9 Mate Myanmar · Privacy Policy</span><a href="#main">Back to top ↑</a></footer>
+</body>
+</html>

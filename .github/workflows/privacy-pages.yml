@@ -1,0 +1,57 @@
+name: Publish approved Privacy Policy
+
+# No push/pull_request/schedule trigger: committing this file cannot publish the draft.
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'After owner approval, type PUBLISH APPROVED PRIVACY POLICY'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: privacy-pages
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: false
+          persist-credentials: false
+      - name: Require explicit publication instruction
+        env:
+          CONFIRMATION: ${{ inputs.confirmation }}
+        run: |
+          python3 - <<'PY'
+          import os
+          if os.environ['CONFIRMATION'] != 'PUBLISH APPROVED PRIVACY POLICY':
+              raise SystemExit('Publication confirmation did not match')
+          PY
+      - name: Validate approved content
+        run: python3 tools/check-privacy-site.py --release
+      - name: Stage only public website files
+        run: |
+          mkdir _policy_site
+          cp privacy-site/index.html privacy-site/styles.css privacy-site/.nojekyll _policy_site/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _policy_site
+  deploy:
+    needs: prepare
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy reviewed policy
+        id: deployment
+        uses: actions/deploy-pages@v4

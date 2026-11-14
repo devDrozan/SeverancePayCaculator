@@ -1,0 +1,33 @@
+{
+  "approved": true,
+  "approvedContentSha256": "2b4e4a3e1cba296c3247bfb0c962bb479e2c9918abd0384b3b777239c4253768",
+  "contactEmail": "rozannainghangu@gmail.com",
+  "proposedEffectiveDate": "2026-11-09",
+  "plannedUrl": "https://devDrozan.github.io/SeverancePayCaculator/",
+  "ownerConfirmations": {
+    "confirmedOn": "2026-11-09",
+    "productionApi": "Not deployed yet",
+    "advertisingAccount": "Default Google AdMob setup",
+    "supportEmailRetention": "Not decided yet"
+  },
+  "openItems": [
+    "Decide support-email retention and deletion practice and update the interim policy",
+    "Select and verify production API host, region, subprocessors, logging and retention before public online calculation release",
+    "Verify intended age audience, distribution countries and final AdMob consent configuration for release",
+    "Resolve or explicitly scope advertising consent and in-app policy-access gaps",
+    "Verify final release manifest, SDKs, transport and backup/migration behavior"
+  ],
+  "status": "Published interim policy; public HTTPS source verified; app release remains unverified.",
+  "publicationMode": "interim",
+  "interimPublicationAuthorized": true,
+  "appReleaseReady": false,
+  "approvalInstruction": "now publish and i will provide update informations later",
+  "approvedOn": "2026-11-09",
+  "deploymentBranch": "codex/privacy-policy-pages",
+  "deploymentMode": "GitHub Pages branch root",
+  "publishedUrl": "https://devdrozan.github.io/SeverancePayCaculator/",
+  "publishedOn": "2026-11-09",
+  "verifiedOn": "2026-11-09",
+  "publishedCommit": "693ba4ead5ae741ff1dab611454bdfbabba5cce1",
+  "deploymentRun": "https://github.com/devDrozan/SeverancePayCaculator/actions/runs/42627769135"
+}

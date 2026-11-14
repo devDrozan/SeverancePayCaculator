@@ -1,6 +1,6 @@
 # E9 Mate Myanmar
 
-An English/Burmese worker toolkit for Myanmar E-9 workers in Korea. The local mobile app opens a modular Home dashboard with one information and sample-ad carousel, service search, Severance Calculator, and E-9 Insurance. Salary Estimate from Work Time opens its calendar and salary flow directly; other planned services open Coming soon pages. The web/PWA provides severance and the Salary Estimate from Work Time tool. The mobile salary feature is enabled in local source; native release verification remains pending. Normal statutory severance, DB baseline estimates, and DC required-contribution estimates use one stateless API.
+An English/Burmese worker toolkit for Myanmar E-9 workers in Korea. The local mobile app opens a modular Home dashboard with one information and sample-ad carousel, service search, Severance Calculator, and E-9 Insurance. Salary Estimate from Work Time is first in service/navigation order, followed by a separate Expenses calendar; other planned services open Coming soon pages. Mobile still starts at Home and web still starts at the Severance Calculator. The web/PWA provides severance, Salary Estimate from Work Time, and a monthly expense calendar with daily totals. The mobile salary feature is enabled in local source; native release verification remains pending. Normal statutory severance, DB baseline estimates, and DC required-contribution estimates use one stateless API.
 
 ## Projects
 
@@ -59,7 +59,7 @@ The workspace root contains documentation and submodule pointers, so running `np
 
 The calculator estimates gross KRW amounts before tax for one continuous employment period with one unchanged plan. It flags special histories for review. DB estimates cover the statutory baseline. DC contributions and reported investment balances remain separate.
 
-There is no login or server database. Severance inputs and all calculation results stay in session memory. Salary Estimate from Work Time may save its daily work records and monthly pay settings only on the device (IndexedDB on web, SQLite on mobile), with disclosure and deletion controls. Only the selected month is submitted when estimating; the API does not store, log, or cache financial payloads. Language and appearance preferences are also saved locally.
+There is no login or server database. Severance inputs and all calculation results stay in session memory. Salary Estimate from Work Time may save its daily work records and monthly pay settings, and Expenses may save manual expense records, only on the device (IndexedDB on web, SQLite on mobile), with separate disclosure and deletion controls. Expense records and exact daily totals stay local and work offline. Tap a calendar date to add, view, edit, or delete records; Save confirms the visible local-storage disclosure automatically. Only the selected month is submitted when estimating; the API does not store, log, or cache financial payloads. Language and appearance preferences are also saved locally.
 
 Local implementation does not provision public hosting, publish remote repositories, or submit mobile apps to stores. Before public release, have a Korean labor specialist review the calculation assumptions, historical boundaries, and English/Burmese wording.
 
@@ -70,4 +70,10 @@ Local implementation does not provision public hosting, publish remote repositor
 | [SPEC.md](SPEC.md) | Current feature requirements, calculation behavior, acceptance criteria, and future features |
 | [AGENTS.md](AGENTS.md) | Stable architecture, technology choices, repository boundaries, and engineering guidance |
 | [CLAUDE.md](CLAUDE.md) | Entry point that directs Claude to `AGENTS.md` |
+| [Privacy Policy draft](Privacy_Policy_Draft.md) | Source-audited Android policy, review status, and compliance checklists |
+| [Policy website setup](privacy-site/README.md) | Local preview and manual, approval-gated GitHub Pages deployment |
 | Project READMEs above | User-facing information for running and using each project |
+
+Mobile **Currency Exchange** is available from Home, Services and search at `/exchange`. Official Rate uses CBM’s published market-based KRW cross rate, normalized from 100 KRW to 1 KRW on the API; the separately verified Reference Rate is comparison-only. Hundi calculations and defaults are unchanged. Dedicated `/cbm` endpoints preserve legacy web reference contracts; the web converter remains on its existing reference endpoints. See [SPEC.md](SPEC.md#6c-currency-exchange--available-mobile-service-with-cbm-official-rate), [API setup](api/README.md#mobile-official-rate--cbm-market-based-rate), and [mobile usage](mobile/README.md#currency-exchange). API hosting and native release verification remain separate; this change does not build, push or deploy.
+
+The Android [Privacy Policy](https://devdrozan.github.io/SeverancePayCaculator/) is published as an **interim notice**, authorized by the owner on 9 November 2026 while remaining details are finalized. GitHub Pages serves only the static policy files from `codex/privacy-policy-pages`; application branches/submodules are unchanged. The notice discloses undecided email retention and incomplete deployment/consent checks. App consent and in-app policy-link gaps remain recorded in [the privacy audit](compliance/privacy-review-2026-11-09.md); website publication does not certify application release readiness. See [website setup](privacy-site/README.md) for future approved updates.

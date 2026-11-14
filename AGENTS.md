@@ -47,7 +47,8 @@ Both clients use [openapi-typescript](https://openapi-ts.dev/) to generate types
 
 ## Calculation and contract boundaries
 
-- All financial calculations run in `api`. Clients collect inputs, provide feedback, and display API results; do not duplicate calculation formulas in either client.
+- Salary, severance, and other authoritative financial calculations run in `api`. Clients collect inputs, provide feedback, and display API results; do not duplicate those formulas in either client. The Expenses calendar may aggregate its locally saved decimal-string records into exact daily totals offline as the narrow exception specified in SPEC.md; this does not authorize local salary/severance formulas.
+- Currency conversion uses a server-only, explicitly configured source adapter. Only public rate snapshots may be cached in backend process memory; financial request bodies/results remain uncached. Provider credentials and access configuration are server-only. Provenance, source-access gates, and freshness rules belong in SPEC.md.
 - Separate pure calculation functions and versioned rules from HTTP handling. Official sources, verification dates, and calculation-rule versions belong to API rules metadata.
 - Client validation improves input feedback; server validation remains authoritative.
 - Use decimal arithmetic for money and preserve intermediate precision. Follow `SPEC.md` for dates, monetary wire values, and displayed rounding.
@@ -58,9 +59,9 @@ Both clients use [openapi-typescript](https://openapi-ts.dev/) to generate types
 
 ## Privacy and deployment boundaries
 
-- Keep the initial system stateless, without login, cloud history, or a server database. Authentication and cloud persistence are future extensions, not dependencies of the calculator; approved salary-module local storage is described below.
+- Keep the initial system stateless, without login, cloud history, or a server database. Authentication and cloud persistence are future extensions, not dependencies of the calculator; approved salary-module and expense-module local storage is described below.
 - Do not request passport numbers, alien registration numbers, or bank details.
-- Keep severance financial inputs and all calculation results in client session memory. Persist language and appearance preferences; the Salary Estimate from Work Time module may additionally persist its own work records and monthly pay settings locally as specified in SPEC.md (IndexedDB on web, SQLite on mobile). Do not cache financial requests or responses.
+- Keep severance financial inputs and all calculation results in client session memory. Persist language and appearance preferences; the Salary Estimate from Work Time module may additionally persist its own work records and monthly pay settings, and the Expenses module may persist its own manual expense records, locally as specified in SPEC.md (IndexedDB on web, SQLite on mobile). Expense descriptions and records stay local and are not submitted to the API. Do not cache financial requests or responses.
 - Exclude salaries and calculation payloads from logs and analytics.
 - Use HTTPS outside local development and keep API base URLs environment-configurable. Client-exposed environment variables must contain no secrets.
 - Deliver `api` as a Docker-compatible HTTP service and `app` as static build assets. Mobile uses Expo's build and release workflow.
@@ -71,7 +72,6 @@ Both clients use [openapi-typescript](https://openapi-ts.dev/) to generate types
 These are reserved architectural extension points. Their feature scope belongs in `SPEC.md`; do not implement them as part of the initial release.
 
 - Login and saved history: Supabase Auth and PostgreSQL, with per-user access controls.
-- Currency conversion: backend exchange-rate integration carrying source and update timestamps.
 - Worker information: reviewed multilingual content with official references and review dates.
 - Assistant: backend language-model integration grounded in verified information; numerical answers call the calculation API.
 - Additional languages: extend each client's translation resources.
